@@ -1,5 +1,6 @@
 import sys
 import os
+from termcolor import colored
 
 
 def get_input(prompt: str, *, index: int = None, expected_type: type = str) -> any:
@@ -54,3 +55,9 @@ def clear_screen() -> None:
         os.system('clear')
     else:
         raise NotImplementedError("Unsupported operating system")
+
+
+def print_status(message: str, success: bool = True) -> None:
+    """Print a colored status message to the terminal."""
+    color = "green" if success else "red"
+    print(colored(message, color))
