@@ -3,6 +3,19 @@ import os
 import time
 from termcolor import colored
 
+def setup_encoding():
+    """
+    Ensure that the terminal output handles UTF-8 characters correctly.
+    This is especially important on Windows to avoid UnicodeEncodeError.
+    """
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8")
+        except Exception:
+            # Fallback if reconfiguration fails in non-standard environments
+            pass
+
+
 
 def get_input(prompt: str, *, index: int = None, expected_type: type = str) -> any:
     """"Retrieve value from command-line argument or prompt user for input."""

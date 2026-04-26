@@ -4,7 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastfingertips"
-version = "0.1.3"
+version = "0.1.4"
+
 description = "A collection of personal Python utility functions to reduce code repetition."
 readme = "README.md"
 authors = [
